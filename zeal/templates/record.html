@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class="card" style="width: 70rem;">
+    <div class="card-header">
+      {{record.first_name}} {{record.last_name}}
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"> <strong>email: </strong>{{record.email}}</li>
+      <li class="list-group-item"><strong>phone number: </strong>{{record.phone_number}}</li>
+      <li class="list-group-item"><strong>address: </strong>{{record.address}}</li>
+      <li class="list-group-item"><strong>city: </strong>{{record.city}}</li>
+      <li class="list-group-item"><strong>state: </strong>{{record.state}}</li>
+      <li class="list-group-item"><strong>zipcode: </strong>{{record.zipcode}}</li>
+      <li class="list-group-item"><strong>created at: </strong>{{record.created_at}}</li>
+      <li class="list-group-item"><strong>ID: </strong>{{record.id}}</li>
+    </ul>
+  </div>
+
+  <br>
+  <a href="{% url 'update_record' record.id %}" class="btn btn-primary">Update</a>
+  <a href="{% url 'delete_record' record.id %}" class="btn btn-danger">Delete</a>
+  <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+  
+
+{% endblock %}
