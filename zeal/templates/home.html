@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
 
   {% if user.is_authenticated %}
@@ -33,7 +35,7 @@
             <td>{{record.state}}</td>
             <td>{{record.zipcode}}</td>
             <td>{{record.created_at}}</td>
-           <td class="id_link"><a href="{% url 'record' record.id %}">{{record.id}}</a></td>
+           <td ><a class="id_link" href="{% url 'record' record.id %}">{{record.id}}</a></td>
         </tr>
         {% endfor %}
       </tbody>
